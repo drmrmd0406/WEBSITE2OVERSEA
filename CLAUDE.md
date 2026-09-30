@@ -2,7 +2,21 @@
 英国 B2C 独立站。目标市场英国消费者，产品待定（初期考虑小件家具）。
 
 # 技术栈
-Shopify（或 WooCommerce on VPS）
+Shopify（已选定，不再考虑 WooCommerce on VPS）。
+主题开发用 Shopify CLI + Git，主题代码放在本仓库。
+
+# 范围
+本仓库和对应的对话只负责技术实现。以下事项由其他项目负责，这里不讨论，只预留接口：
+- 法律文本（退货政策、隐私政策、服务条款、取消表格）
+- 公司主体、VAT 注册、收款账号开通
+- 选品、定价、物流
+
+技术侧预留的接口（其他项目给出结果后，填进来即可，不改代码）：
+- 法律页面：用 Shopify Policies + 占位页面，页脚固定链接
+- 收款：在 Shopify 后台设置，主题代码不依赖具体用哪种收款方式
+- VAT：税率由后台税务设置负责；主题只负责在价格旁显示 "incl. VAT"
+- 退货：退货天数等做成主题设置项，不写死在代码里
+- Cookie 同意：统计和营销脚本必须先经 Shopify Customer Privacy API 确认用户同意才加载
 
 # 约束
 - 面向英国消费者，必须符合 UK GDPR、Consumer Contracts Regulations 2013
