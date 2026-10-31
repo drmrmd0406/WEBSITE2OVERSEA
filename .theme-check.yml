@@ -1,0 +1,10 @@
+# Shopify Theme Check configuration (`shopify theme check`).
+extends: theme-check:recommended
+
+# The store sells in English only. New storefront text goes in locales/en.default.json, and new
+# theme-editor labels go in locales/en.default.schema.json plus locales/zh-CN.schema.json (the
+# admin language in use). The other locale files are left exactly as Horizon ships them, so
+# upstream updates merge cleanly; Shopify falls back to the default locale for missing keys.
+MatchingTranslations:
+  ignore:
+    - locales/!(zh-CN.schema).json

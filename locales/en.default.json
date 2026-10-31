@@ -371,5 +371,13 @@
       "default_title": "Default Title",
       "sticky_add_to_cart": "Quick add to cart bar"
     }
+  },
+  "compliance": {
+    "vat_included": "incl. VAT",
+    "returns_notice": "{{ days }}-day returns",
+    "returns_policy": "Returns policy",
+    "legal_links": "Legal",
+    "cookie_preferences": "Cookie preferences",
+    "no_policies": "No policies yet. Add them in Settings > Policies."
   }
 }

@@ -1131,5 +1131,31 @@
     "storytelling": "品牌故事",
     "text": "文本",
     "blog_post": "博客文章"
+  },
+  "compliance": {
+    "names": {
+      "uk_compliance": "英国合规",
+      "legal_links": "法律链接",
+      "returns_notice": "退货说明"
+    },
+    "settings": {
+      "vat_label": "“incl. VAT” 标签",
+      "vat_label_product_pages": "产品页面",
+      "vat_label_product_cards": "产品卡",
+      "returns": "退货",
+      "returns_window_days": "退货期限（天）",
+      "cancellation_form_page": "取消表格页面",
+      "cookies": "Cookie",
+      "cookie_preferences_link": "显示“Cookie preferences”链接",
+      "show_policy_link": "链接到退款政策"
+    },
+    "info": {
+      "vat_label": "仅当店铺的税费设置为价格含税时显示。文字可在“在线商店 > 模板 > 编辑默认模板内容”中修改。",
+      "returns_window_days": "“退货说明”区块显示这个天数，最少 14 天。",
+      "cancellation_form_page": "先在“在线商店 > 页面”中创建页面，再在这里选择。“法律链接”区块会链接到它。",
+      "cookie_preferences_link": "在“设置 > 客户隐私”中开启 Shopify Cookie 横幅后，会显示在“法律链接”区块中。",
+      "legal_links": "列出[设置 > 政策](/admin/settings/legal)中的全部政策，然后是“模板设置 > 英国合规”中的取消表格页面和 Cookie 偏好链接。",
+      "returns_notice": "天数来自“模板设置 > 英国合规”。在[设置 > 政策](/admin/settings/legal)中填写退款政策后，会显示链接。"
+    }
   }
 }

@@ -1,0 +1,54 @@
+{%- doc -%}
+  Shows the returns window from Theme settings > UK compliance (for example "14-day returns"),
+  followed by a link to the refund policy from Settings > Policies once that policy exists.
+  Meant for the product page.
+{%- enddoc -%}
+
+<p
+  class="returns-notice"
+  {{ block.shopify_attributes }}
+>
+  {{- 'compliance.returns_notice' | t: days: settings.returns_window_days -}}
+  {%- if block.settings.show_policy_link and shop.refund_policy != blank -%}
+    <span aria-hidden="true"> · </span>
+    <a href="{{ shop.refund_policy.url }}">{{ 'compliance.returns_policy' | t }}</a>
+  {%- endif -%}
+</p>
+
+{% stylesheet %}
+  .returns-notice {
+    margin: 0;
+    font-size: min(0.85em, var(--font-paragraph--size));
+    color: rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-subdued-text));
+  }
+
+  .returns-notice a {
+    color: inherit;
+    text-decoration: underline;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:compliance.names.returns_notice",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:compliance.info.returns_notice"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_policy_link",
+      "label": "t:compliance.settings.show_policy_link",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:compliance.names.returns_notice",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

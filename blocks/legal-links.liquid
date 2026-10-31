@@ -1,0 +1,116 @@
+{%- doc -%}
+  Footer column linking to the store's legal pages, so they are always one click away:
+  - every policy filled in under Settings > Policies (refund, privacy, terms, shipping, contact...)
+  - the cancellation form page picked in Theme settings > UK compliance
+  - a "Cookie preferences" button, revealed by consent-scripts.js once the Shopify
+    cookie banner is active, so visitors can change their consent later
+  The legal text itself lives in Shopify admin, not in the theme.
+{%- enddoc -%}
+
+{%- liquid
+  assign heading = block.settings.heading
+  assign nav_label = heading
+  if nav_label == blank
+    assign nav_label = 'compliance.legal_links' | t
+  endif
+  assign cancellation_page = settings.cancellation_form_page
+-%}
+
+<div
+  class="legal-links"
+  {{ block.shopify_attributes }}
+>
+  {%- if heading != blank -%}
+    <p class="legal-links__heading">{{ heading | escape }}</p>
+  {%- endif -%}
+  <nav aria-label="{{ nav_label | escape }}">
+    <ul class="legal-links__list list-unstyled">
+      {%- for policy in shop.policies -%}
+        {%- if policy != blank -%}
+          <li class="paragraph">
+            <a href="{{ policy.url }}">{{ policy.title | escape }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if cancellation_page != blank -%}
+        <li class="paragraph">
+          <a href="{{ cancellation_page.url }}">{{ cancellation_page.title | escape }}</a>
+        </li>
+      {%- endif -%}
+      {%- if settings.cookie_preferences_link -%}
+        <li
+          class="paragraph"
+          data-cookie-preferences
+          hidden
+        >
+          <button
+            type="button"
+            class="legal-links__button button-unstyled"
+          >
+            {{- 'compliance.cookie_preferences' | t -}}
+          </button>
+        </li>
+      {%- endif -%}
+    </ul>
+  </nav>
+  {%- if request.design_mode and shop.policies.size == 0 -%}
+    <p class="legal-links__hint">{{ 'compliance.no_policies' | t }}</p>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  /* Same look as the footer menu headings: paragraph font, heading weight. */
+  .legal-links__heading {
+    margin: 0 0 12px;
+    font-family: var(--font-paragraph--family);
+    font-size: var(--font-paragraph--size);
+    line-height: var(--font-paragraph--line-height);
+    font-weight: var(--font-heading--weight);
+  }
+
+  .legal-links__list li + li {
+    margin-block-start: 12px;
+  }
+
+  .legal-links__list a {
+    color: inherit;
+  }
+
+  /* Two classes so this wins over the global .button-unstyled colour and font size. */
+  .legal-links .legal-links__button {
+    color: inherit;
+    font: inherit;
+    text-align: start;
+    cursor: pointer;
+  }
+
+  .legal-links__hint {
+    margin-block-start: 12px;
+    font-size: var(--font-size--xs);
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:compliance.names.legal_links",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:compliance.info.legal_links"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Legal"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:compliance.names.legal_links"
+    }
+  ]
+}
+{% endschema %}

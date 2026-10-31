@@ -1,0 +1,34 @@
+{%- doc -%}
+  Renders the "incl. VAT" label after a price.
+
+  Shown only when the store's tax settings include tax in prices (`cart.taxes_included`)
+  and the label is turned on for this context in Theme settings > UK compliance.
+  Product pages and product cards are told apart the same way the `price` snippet
+  decides whether to show the currency code.
+
+  @param {product} product_resource - The product whose price is being rendered
+
+  @example
+  {% render 'vat-label', product_resource: product_resource %}
+{%- enddoc -%}
+
+{%- liquid
+  if product.handle == product_resource.handle
+    assign show_vat_label = settings.vat_label_product_pages
+  else
+    assign show_vat_label = settings.vat_label_product_cards
+  endif
+-%}
+
+{%- if show_vat_label and cart.taxes_included -%}
+  <span class="price__vat-label">{{ 'compliance.vat_included' | t }}</span>
+{%- endif -%}
+
+{% stylesheet %}
+  .price__vat-label {
+    font-size: min(0.85em, var(--font-paragraph--size));
+    font-weight: var(--font-paragraph--weight);
+    color: rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-subdued-text));
+    white-space: nowrap;
+  }
+{% endstylesheet %}

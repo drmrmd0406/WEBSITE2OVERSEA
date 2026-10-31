@@ -115,6 +115,7 @@
       >
     {% endif %}
   {% endif %}
+  {% render 'vat-label', product_resource: product_resource %}
   {%- if selected_variant.unit_price and show_unit_price %}
     {%- liquid
       if use_currency

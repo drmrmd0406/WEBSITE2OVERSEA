@@ -155,6 +155,12 @@
             "padding-inline-end": 0
           }
         },
+        "legal_links": {
+          "type": "legal-links",
+          "settings": {
+            "heading": "Legal"
+          }
+        },
         "menu_main": {
           "type": "menu",
           "settings": {
@@ -176,7 +182,8 @@
       "block_order": [
         "group_wErUQf",
         "menu_footer",
-        "menu_main"
+        "menu_main",
+        "legal_links"
       ],
       "name": "t:names.footer",
       "settings": {
@@ -198,13 +205,6 @@
             "case": "none"
           }
         },
-        "policy_list": {
-          "type": "footer-policy-list",
-          "settings": {
-            "font_size": "0.75rem",
-            "case": "none"
-          }
-        },
         "social_icons": {
           "type": "social-links",
           "settings": {
@@ -218,7 +218,6 @@
       },
       "block_order": [
         "copyright",
-        "policy_list",
         "social_icons"
       ],
       "settings": {

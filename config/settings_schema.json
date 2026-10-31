@@ -2116,5 +2116,61 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "t:compliance.names.uk_compliance",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:compliance.settings.vat_label"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:compliance.info.vat_label"
+      },
+      {
+        "type": "checkbox",
+        "id": "vat_label_product_pages",
+        "label": "t:compliance.settings.vat_label_product_pages",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "vat_label_product_cards",
+        "label": "t:compliance.settings.vat_label_product_cards",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "t:compliance.settings.returns"
+      },
+      {
+        "type": "range",
+        "id": "returns_window_days",
+        "label": "t:compliance.settings.returns_window_days",
+        "info": "t:compliance.info.returns_window_days",
+        "min": 14,
+        "max": 90,
+        "step": 1,
+        "default": 14
+      },
+      {
+        "type": "page",
+        "id": "cancellation_form_page",
+        "label": "t:compliance.settings.cancellation_form_page",
+        "info": "t:compliance.info.cancellation_form_page"
+      },
+      {
+        "type": "header",
+        "content": "t:compliance.settings.cookies"
+      },
+      {
+        "type": "checkbox",
+        "id": "cookie_preferences_link",
+        "label": "t:compliance.settings.cookie_preferences_link",
+        "info": "t:compliance.info.cookie_preferences_link",
+        "default": true
+      }
+    ]
   }
 ]

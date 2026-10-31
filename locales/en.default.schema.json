@@ -1237,5 +1237,31 @@
     "when_will_order_arrive": "When will I get my order?",
     "where_are_products_made": "Where are your products manufactured?",
     "disclosures": "Disclosures"
+  },
+  "compliance": {
+    "names": {
+      "uk_compliance": "UK compliance",
+      "legal_links": "Legal links",
+      "returns_notice": "Returns notice"
+    },
+    "settings": {
+      "vat_label": "“incl. VAT” label",
+      "vat_label_product_pages": "Product pages",
+      "vat_label_product_cards": "Product cards",
+      "returns": "Returns",
+      "returns_window_days": "Returns window (days)",
+      "cancellation_form_page": "Cancellation form page",
+      "cookies": "Cookies",
+      "cookie_preferences_link": "Show “Cookie preferences” link",
+      "show_policy_link": "Link to refund policy"
+    },
+    "info": {
+      "vat_label": "Shown only when the store's tax settings include tax in prices. Change the wording in Online Store > Themes > Edit default theme content.",
+      "returns_window_days": "Shown by the Returns notice block. Minimum 14 days.",
+      "cancellation_form_page": "Create the page in Online Store > Pages, then select it here. The Legal links block links to it.",
+      "cookie_preferences_link": "Appears in the Legal links block once the Shopify cookie banner is turned on in Settings > Customer privacy.",
+      "legal_links": "Lists every policy from [Settings > Policies](/admin/settings/legal), then the cancellation form page and cookie preferences link from Theme settings > UK compliance.",
+      "returns_notice": "The number of days comes from Theme settings > UK compliance. The link appears once a refund policy exists in [Settings > Policies](/admin/settings/legal)."
+    }
   }
 }
