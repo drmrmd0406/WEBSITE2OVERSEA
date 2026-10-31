@@ -7,7 +7,7 @@ Shopify（已选定，不再考虑 WooCommerce on VPS）。
 
 # 开发流程
 - 主题基于 Shopify 官方 Horizon，文件直接放在仓库根目录。`upstream` 远程指向 https://github.com/Shopify/horizon ，用 `git merge upstream/main` 跟进官方更新。
-- Partner 组织名 Lanting Studio，开发店名建议 `lanting-dev`（实际店名待用户确认；名字只是占位）。
+- Partner 组织名 Lanting Studio，开发店名 Lanting，后台网址 `lanting-rbg8hwv0.myshopify.com`（名字只是占位）。
 - 店铺通过 Shopify GitHub 集成连接本仓库分支，双向同步：后台主题编辑器的改动会被 Shopify 提交回分支。动代码前先 `git pull`，避免冲突。
 - `config/settings_data.json` 和 `templates/*.json` 存的是后台编辑器里的取值，主要由后台改；代码改动尽量放在 `.liquid`、`assets/`、`locales/`、`config/settings_schema.json`。
 - 推送前跑 `shopify theme check`。导入时的基线是 0 error、6 warning（来自 Horizon 原版），不能新增 error。
